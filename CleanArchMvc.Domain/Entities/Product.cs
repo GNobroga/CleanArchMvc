@@ -74,7 +74,7 @@ public sealed class Product : BaseEntity
         DomainExceptionValidation.When(stock < 0,
             "product.Stock needs be greather then or equals zero.");
 
-        DomainExceptionValidation.When(!string.IsNullOrEmpty(image) && image.Length > 250,
+        DomainExceptionValidation.When(image?.Length > 250,
             "product.Image accepts at maximum 250 characters");
     }
 }
