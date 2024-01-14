@@ -25,7 +25,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 
       foreach (var entry in entries)
       {
-        if (entry.Entity is not BaseEntity entity) continue;
+        if (entry.Entity is not BaseEntity<int> entity) continue;
 
         if (entry.State == EntityState.Modified)
         {

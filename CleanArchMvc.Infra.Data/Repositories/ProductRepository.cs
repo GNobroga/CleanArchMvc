@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchMvc.Infra.Data.Repositories;
 
-public class ProductRepository(ApplicationDbContext context) : Repository<Product>(context), IProductRepository
+public class ProductRepository(ApplicationDbContext context) : Repository<Product, int>(context), IProductRepository
 {
     #region Async Method
     public async Task<IEnumerable<Product>> GetProductsWithCategories()

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchMvc.Infra.Data.Repositories.Base;
 
-public class Repository<TEntity>(ApplicationDbContext context) : IRepository<TEntity> where TEntity : BaseEntity
+public class Repository<TEntity, TKey>(ApplicationDbContext context) : IRepository<TEntity, TKey> where TEntity : BaseEntity<TKey>
 {
     protected readonly ApplicationDbContext _context = context;
 
