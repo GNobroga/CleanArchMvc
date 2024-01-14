@@ -4,7 +4,7 @@ using CleanArchMvc.Domain.Validation;
 
 namespace CleanArchMvc.Entities;
 
-public sealed class Category : BaseEntity
+public sealed class Category : BaseEntity<int>
 {
     public string Name { get; private set; }
 
