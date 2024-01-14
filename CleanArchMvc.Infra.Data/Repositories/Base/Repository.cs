@@ -11,6 +11,7 @@ public class Repository<TEntity>(ApplicationDbContext context) : IRepository<TEn
 
     protected readonly DbSet<TEntity> _dbSet = context.Set<TEntity>();
 
+    #region Async Method
     public async Task<TEntity> DeleteAsync(TEntity entity)
     {
         _dbSet.Remove(entity);
@@ -42,4 +43,5 @@ public class Repository<TEntity>(ApplicationDbContext context) : IRepository<TEn
         await _context.SaveChangesAsync();
         return entity;
     }
+    #endregion
 }

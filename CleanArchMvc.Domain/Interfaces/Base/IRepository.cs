@@ -2,8 +2,8 @@ using CleanArchMvc.Domain.Entities.Base;
 
 namespace CleanArchMvc.Domain.Interfaces.Base;
 
-public interface IRepository<TEntity> where TEntity: BaseEntity
-{
+public interface IRepository<TEntity, TKey> where TEntity: BaseEntity<TKey>
+{ 
     Task<IEnumerable<TEntity>> FindAllAsync();
 
     Task<TEntity> FindByIdAsync(int? id);

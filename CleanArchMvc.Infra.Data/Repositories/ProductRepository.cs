@@ -8,6 +8,7 @@ namespace CleanArchMvc.Infra.Data.Repositories;
 
 public class ProductRepository(ApplicationDbContext context) : Repository<Product>(context), IProductRepository
 {
+    #region Async Method
     public async Task<IEnumerable<Product>> GetProductsWithCategories()
     {
         return await _dbSet.Include(p => p.Category).AsNoTracking().ToListAsync();
@@ -17,4 +18,5 @@ public class ProductRepository(ApplicationDbContext context) : Repository<Produc
         var product = await _dbSet.Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
         return product!;
     }
+    #endregion
 }
