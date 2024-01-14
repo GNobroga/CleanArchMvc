@@ -1,0 +1,11 @@
+@model IEnumerable<ProductDTO>
+
+@foreach (var category in Model)
+{
+    <li>@category.Name</li>
+}
+
+@if (!Model.Any()) 
+{
+    <p>Does not have elements</p>
+}
