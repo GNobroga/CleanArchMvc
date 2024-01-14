@@ -8,6 +8,7 @@ namespace CleanArchMvc.Application.Services;
 
 public class CategoryService(ICategoryRepository categoryRepository, IMapper mapper) : ICategoryService
 {
+    #region Async method
     public async Task<CategoryDTO> AddAsync(CategoryDTO categoryDTO)
     {
         var category = mapper.Map<Category>(categoryDTO);
@@ -41,4 +42,5 @@ public class CategoryService(ICategoryRepository categoryRepository, IMapper map
         await categoryRepository.UpdateAsync(category);
         return mapper.Map<CategoryDTO>(category);
     }
+    #endregion
 }

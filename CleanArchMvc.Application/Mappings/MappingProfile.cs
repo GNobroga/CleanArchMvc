@@ -1,5 +1,6 @@
 using AutoMapper;
 using CleanArchMvc.Application.DTOs;
+using CleanArchMvc.Application.Products.Commands.Base;
 using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Entities;
 
@@ -11,5 +12,6 @@ public class MappingProfile : Profile
     {
         CreateMap<CategoryDTO, Category>().ReverseMap();
         CreateMap<ProductDTO, Product>().ReverseMap();
+        CreateMap<Product, ProductCommand>().ReverseMap();
     }
 }
