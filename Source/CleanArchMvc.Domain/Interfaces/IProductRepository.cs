@@ -5,6 +5,6 @@ namespace CleanArchMvc.Domain.Interfaces;
 
 public interface IProductRepository : IRepository<Product, int>
 {
-    Task<IEnumerable<Product>> GetProductsWithCategories();
-    Task<Product> GetProductWithCategory(int id);
+    Task<IEnumerable<Product>> GetWithCategories();
+    Task<Product> GetWithCategory(int id);
 }

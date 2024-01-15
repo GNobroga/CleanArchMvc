@@ -30,7 +30,7 @@ public static class DependencyInjection
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ICategoryService, CategoryService>();
 
-        var handlers = AppDomain.CurrentDomain.Load("CleanArchMvc.Application");
+        var handlers = Assembly.Load("CleanArchMvc.Application");
 
         services.AddMediatR(handlers);
         

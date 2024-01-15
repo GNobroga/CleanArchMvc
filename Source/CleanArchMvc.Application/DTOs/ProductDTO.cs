@@ -16,5 +16,6 @@ public record ProductDTO(
     [Required]
     [Range(1, 9999)]
     int Stock,
-    string Image
+    string Image,
+    int CategoryId
 );

@@ -1,11 +1,9 @@
 @model IEnumerable<ProductDTO>
 
-@foreach (var category in Model)
-{
-    <li>@category.Name</li>
-}
+<a asp-action="Create">Create a new product</a>
+<a asp-action="Create" asp-controller="Categories">Create a new category</a>
 
-@if (!Model.Any()) 
+@foreach (var product in Model)
 {
-    <p>Does not have elements</p>
+    <partial path="~/Views/Products/Partials/" name="_ProductItem" model="@product"/>
 }

@@ -1,22 +1,59 @@
-html {
-  font-size: 14px;
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FB5731;
+  padding: 1rem;
+  gap: 0.8rem;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.header .search {
+  background-color: white;
+  width: 50%;
+  display: flex;
+  padding: 0.2rem;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.header .search input {
+  outline: none;
+  border: none;
+  padding: 1rem;
+  flex: 1;
+  font-size: 1rem;
 }
 
-body {
-  margin-bottom: 60px;
+.header .search button {
+  cursor: pointer;
+  background-color: #FB5731;
+  outline: none;
+  border: none;
+  padding: 0 0.5rem;
+  color: #fff;
+
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  color: white;
+  width: 50%;
+  gap: 1rem;
+}
+
+.header ul > li a {
+  color: currentColor;
+}
+
+
+.clicked {
+  transform: scale(1.05);
+  transition: all ease-in;
 }

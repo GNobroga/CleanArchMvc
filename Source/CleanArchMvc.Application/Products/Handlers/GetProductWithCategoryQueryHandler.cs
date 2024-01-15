@@ -9,7 +9,7 @@ public class GetProductWithCategoryQueryHandler(IProductRepository productReposi
 {
     public async Task<Product> Handle(GetProductWithCategoryQuery request, CancellationToken cancellationToken)
     {
-        var product = await productRepository.GetProductWithCategory(request.Id) ?? throw new ApplicationException("Product not found");
+        var product = await productRepository.GetWithCategory(request.Id) ?? throw new ApplicationException("Product not found");
         return product;
     }
 }

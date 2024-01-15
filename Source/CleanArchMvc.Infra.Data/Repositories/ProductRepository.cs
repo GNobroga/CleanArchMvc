@@ -9,11 +9,11 @@ namespace CleanArchMvc.Infra.Data.Repositories;
 public class ProductRepository(ApplicationDbContext context) : Repository<Product, int>(context), IProductRepository
 {
     #region Async Method
-    public async Task<IEnumerable<Product>> GetProductsWithCategories()
+    public async Task<IEnumerable<Product>> GetWithCategories()
     {
         return await _dbSet.Include(p => p.Category).AsNoTracking().ToListAsync();
     }
-    public async Task<Product> GetProductWithCategory(int id)
+    public async Task<Product> GetWithCategory(int id)
     {
         var product = await _dbSet.Include(p => p.Category).FirstOrDefaultAsync(p => p.Id == id);
         return product!;

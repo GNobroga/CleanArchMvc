@@ -1,0 +1,8 @@
+@model CategoryDTO
+
+<h1>Create Category</h1>
+
+<form asp-action="Create" method="post">
+    <input asp-for="@Model.Name" placeholder="Name" />
+    <button>Create</button>
+</form>

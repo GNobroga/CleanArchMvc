@@ -1,9 +1,11 @@
 @model IEnumerable<CategoryDTO>
 
-@foreach (var category in Model)
-{
-    <li>@category.Name</li>
-}
+<ul style="padding: 1rem;">   
+    @foreach (var category in Model)
+    {
+        <li> (id - @category.Id) @category.Name</li>
+    }
+</ul>
 
 @if (!Model.Any()) 
 {
